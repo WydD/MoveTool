@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -543,7 +543,7 @@ namespace MoveLib.BCM
                 {
                     byte[] headerBytes =
                     {
-                        0x23, 0x42, 0x43, 0x4D, 0xFE, 0xFF, 0x2c, 0x00, 0x00, 0x00, 0x00, 0x00
+                        0x23, 0x42, 0x43, 0x4D, 0xFE, 0xFF, 0x2c, 0x00, 0x00, 0x00, 0x01, 0x00
                     };
 
                     outFile.Write(headerBytes);
@@ -692,6 +692,7 @@ namespace MoveLib.BCM
                         outFile.Write(file.Moves[i].PositionRestriction);
                         outFile.Write(file.Moves[i].Unknown3);
                         outFile.Write(file.Moves[i].RestrictionDistance);
+                        outFile.Write(file.Moves[i].Unknown4);
                         outFile.Write(file.Moves[i].ProjectileLimit);
                         outFile.Write(file.Moves[i].Unknown6);
                         outFile.Write(file.Moves[i].Unknown7);
@@ -713,7 +714,6 @@ namespace MoveLib.BCM
 
                         outFile.Write(file.Moves[i].Unknown17);
                         outFile.Write(file.Moves[i].Unknown18);
-                        outFile.Write(file.Moves[i].Unknown19);
                         outFile.Write(file.Moves[i].Unknown20);
                         outFile.Write(file.Moves[i].Unknown21);
                         outFile.Write(file.Moves[i].Unknown22);
